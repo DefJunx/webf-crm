@@ -1,5 +1,6 @@
 import "reflect-metadata";
 
+import path from "path";
 import dotenv from "dotenv";
 import express from "express";
 import helmet from "helmet";
@@ -13,6 +14,7 @@ const app = express();
 app.use(helmet());
 app.use(express.json());
 app.use(morgan("common"));
+app.use(express.static(path.join(__dirname, "../public")));
 
 const port = +(process.env.PORT || 1337);
 
