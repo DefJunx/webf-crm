@@ -39,7 +39,8 @@
       ],
       "rules": {
          "prettier/prettier": "error"
-      }
+      },
+      "ignorePatterns": "public"
    },
    "homepage": "https://github.com/DefJunx/webf-crm#readme",
    "dependencies": {
