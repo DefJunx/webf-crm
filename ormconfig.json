@@ -1,0 +1,13 @@
+{
+   "type": "mysql",
+   "entities": [
+      "build/entity/*.js"
+   ],
+   "migrations": [
+      "src/migration/*.ts"
+   ],
+   "cli": {
+      "entitiesDir": "src/entity",
+      "migrationsDir": "src/migration"
+   }
+}
