@@ -1,6 +1,7 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, ManyToMany } from "typeorm";
 import { Project } from "./project";
 import { User } from "./user";
+import { Note } from "./note";
 
 export enum TaskStatus {
    OPEN = "Open",
@@ -27,4 +28,7 @@ export class Task {
 
    @ManyToMany((type) => User)
    assignees: User[];
+
+   @OneToMany((type) => Note, (n) => n.task)
+   notes: Note[];
 }
