@@ -10,8 +10,10 @@
    "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
       "start": "node .",
+      "prestart": "npm run build:client",
       "dev": "nodemon",
       "build": "tsc",
+      "build:client": "npm run build --prefix client",
       "prebuild": "npm run typeorm:run",
       "typeorm": "node -r ts-node/register ./node_modules/typeorm/cli.js",
       "typeorm:migrate": "npm run typeorm migration:generate -- -n",

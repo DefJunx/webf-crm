@@ -14,7 +14,7 @@ Simple CRM Exercise
 - [x] Il PM per il progetto crea dei task che hanno una descrizione, uno status e una deadline (data entro la quale il task deve essere chiuso)
 
 - [x] Un task può essere assegnato ad uno o più sviluppatori (impiegato con ruolo DEV)
-- [ ] OPT: Un task può avere dei commit (messaggi o note) che sono fatti da uno sviluppatore
+- [x] OPT: Un task può avere dei commit (messaggi o note) che sono fatti da uno sviluppatore
 - [x] Il CEO può assumere impiegati PM o DEV
 
 - [ ] Assegnare un task ad uno sviluppatore

@@ -11,10 +11,15 @@ dotenv.config();
 
 const app = express();
 
-app.use(helmet());
+app.use(
+   helmet({
+      contentSecurityPolicy: false,
+   })
+);
 app.use(express.json());
 app.use(morgan("common"));
-app.use(express.static(path.join(__dirname, "../public")));
+app.use(express.static(path.join(__dirname, "../client/build")));
+// app.use(express.static(path.join(__dirname, "../public"))); TODO: Replace with dist of React client folder
 
 const port = +(process.env.PORT || 1337);
 
