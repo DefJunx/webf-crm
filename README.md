@@ -4,18 +4,18 @@ Simple CRM Exercise
 
 ## TODO
 
-- [ ] Un'azienda informatica ha degli impiegati
+- [x] Un'azienda informatica ha degli impiegati
 
-- [ ] Ogni impiegato ha un ruolo (CEO, PM, DEV)
+- [x] Ogni impiegato ha un ruolo (CEO, PM, DEV)
 
-- [ ] Ogni impiegato tranne il CEO è associato ad un team
+- [x] Ogni impiegato tranne il CEO è associato ad un team
 - [ ] OPT: Ogni impiegato ha un badge che usa per entrare / uscire dall'ufficio e registra i tempi di lavoro
-- [ ] L'azienda lavora su progetti che il CEO assegna ad un PM
-- [ ] Il PM per il progetto crea dei task che hanno una descrizione, uno status e una deadline (data entro la quale il task deve essere chiuso)
+- [x] L'azienda lavora su progetti che il CEO assegna ad un PM
+- [x] Il PM per il progetto crea dei task che hanno una descrizione, uno status e una deadline (data entro la quale il task deve essere chiuso)
 
-- [ ] Un task può essere assegnato ad uno o più sviluppatori (impiegato con ruolo DEV)
+- [x] Un task può essere assegnato ad uno o più sviluppatori (impiegato con ruolo DEV)
 - [ ] OPT: Un task può avere dei commit (messaggi o note) che sono fatti da uno sviluppatore
-- [ ] Il CEO può assumere impiegati PM o DEV
+- [x] Il CEO può assumere impiegati PM o DEV
 
 - [ ] Assegnare un task ad uno sviluppatore
 - [ ] Rimuovere un task da uno sviluppatore
