@@ -1,7 +1,11 @@
 {
    "$schema": "https://json.schemastore.org/nodemon",
    "watch": [
-      "src/**/*.ts"
+      "src/**/*"
    ],
+   "ignore": [
+      "node_modules"
+   ],
+   "ext": ".ts",
    "exec": "node --inspect -r ts-node/register src/index.ts"
 }

@@ -24,7 +24,8 @@ app.listen(port, async () => {
       await createConnection();
       console.log("DB Connected");
    } catch (e) {
-      console.error(e);
+      console.error("DB Connection Error", e);
+      process.exit(1);
    }
 });
 
