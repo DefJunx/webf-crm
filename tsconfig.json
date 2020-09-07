@@ -15,7 +15,6 @@
       "allowSyntheticDefaultImports": true
    },
    "include": [
-      "ormconfig.ts",
       "src/**/*.ts"
    ],
    "exclude": [
