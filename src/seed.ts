@@ -1,42 +1,37 @@
 import dotenv from "dotenv";
 import { createConnection } from "typeorm";
-import { User, Role } from "./entity/user";
+import { Project } from "./entity/project";
 import { Team } from "./entity/team";
-import { Task } from "./entity/task";
 
 dotenv.config();
 
 (async function seedDB() {
-   const db = await createConnection();
-   const userRepository = await db.getRepository(User);
-   const teamRepository = await db.getRepository(Team);
-   const taskRepository = await db.getRepository(Task);
+   try {
+      const db = await createConnection();
+      const projectRepo = await db.getRepository(Project);
+      const teamRepo = await db.getRepository(Team);
 
-   const tasks = [];
-   const users = [];
-   const projects = [];
+      const projects = [];
+      const teams = [];
 
-   for (let i = 1; i < 4; i++) {
-      const task = new Task();
+      for (let i = 1; i <= 4; i++) {
+         const project = new Project();
+         project.name = `Project ${i}`;
+         projects.push(project);
+      }
 
-      task.deadline = new Date(Date.now() + 1000 * 60 * 60 * 72);
-      task.description = "The backend doesn't work!";
-      // task.project =
+      for (let i = 1; i <= 3; i++) {
+         const team = new Team();
+         team.name = `Team ${i}`;
+         teams.push(team);
+      }
 
-      tasks.push(tasks);
-   }
+      await projectRepo.save(projects);
+      await teamRepo.save(teams);
 
-   for (let i = 1; i < 4; i++) {
-      const t = new Team();
-
-      t.name = `Team ${i}`;
-
-      const u = new User();
-      u.name = `User ${i}`;
-      u.role = Role.CEO;
-      u.team = t;
-      await userRepository.save(u);
-
-      await teamRepository.save(t);
+      process.exit(0);
+   } catch (e) {
+      console.error(e);
+      process.exit(1);
    }
 })();

@@ -1,15 +1,15 @@
 {
    "type": "mysql",
    "entities": [
-      "build/entity/*.js"
+      "./build/entity/*.js"
    ],
    "migrations": [
-      "src/migration/*.ts"
+      "./src/migration/*.ts"
    ],
    "logging": true,
    "synchronize": false,
    "cli": {
-      "entitiesDir": "src/entity",
-      "migrationsDir": "src/migration"
+      "entitiesDir": "./src/entity",
+      "migrationsDir": "./src/migration"
    }
 }
