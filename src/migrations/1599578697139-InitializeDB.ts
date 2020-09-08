@@ -1,11 +1,11 @@
 import {MigrationInterface, QueryRunner} from "typeorm";
 
-export class initDB1599488640214 implements MigrationInterface {
-    name = 'initDB1599488640214'
+export class InitializeDB1599578697139 implements MigrationInterface {
+    name = 'InitializeDB1599578697139'
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.query("CREATE TABLE `team` (`id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB");
-        await queryRunner.query("CREATE TABLE `user` (`id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `teamId` int NULL, UNIQUE INDEX `REL_1e89f1fd137dc7fea7242377e2` (`teamId`), PRIMARY KEY (`id`)) ENGINE=InnoDB");
+        await queryRunner.query("CREATE TABLE `user` (`id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `role` varchar(255) NOT NULL, `teamId` int NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB");
         await queryRunner.query("CREATE TABLE `project` (`id` int NOT NULL AUTO_INCREMENT, `name` varchar(255) NOT NULL, `projectManagerId` int NULL, UNIQUE INDEX `REL_5d41ecdc2d2e0ec8a4b019008f` (`projectManagerId`), PRIMARY KEY (`id`)) ENGINE=InnoDB");
         await queryRunner.query("CREATE TABLE `task` (`id` int NOT NULL AUTO_INCREMENT, `description` varchar(255) NOT NULL, `deadline` datetime NOT NULL, `status` varchar(255) NOT NULL, `projectId` int NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB");
         await queryRunner.query("CREATE TABLE `note` (`id` int NOT NULL AUTO_INCREMENT, `text` varchar(255) NOT NULL, `taskId` int NULL, PRIMARY KEY (`id`)) ENGINE=InnoDB");
@@ -32,7 +32,6 @@ export class initDB1599488640214 implements MigrationInterface {
         await queryRunner.query("DROP TABLE `task`");
         await queryRunner.query("DROP INDEX `REL_5d41ecdc2d2e0ec8a4b019008f` ON `project`");
         await queryRunner.query("DROP TABLE `project`");
-        await queryRunner.query("DROP INDEX `REL_1e89f1fd137dc7fea7242377e2` ON `user`");
         await queryRunner.query("DROP TABLE `user`");
         await queryRunner.query("DROP TABLE `team`");
     }

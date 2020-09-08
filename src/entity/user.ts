@@ -1,4 +1,13 @@
-import { Entity, PrimaryGeneratedColumn, Column, OneToOne, JoinColumn, ManyToMany, JoinTable } from "typeorm";
+import {
+   Entity,
+   PrimaryGeneratedColumn,
+   Column,
+   OneToOne,
+   JoinColumn,
+   ManyToMany,
+   JoinTable,
+   ManyToOne,
+} from "typeorm";
 import { Team } from "./team";
 import { Task } from "./task";
 
@@ -16,10 +25,10 @@ export class User {
    @Column()
    name: string;
 
+   @Column()
    role: Role;
 
-   @OneToOne((type) => Team)
-   @JoinColumn()
+   @ManyToOne((type) => Team)
    team: Team;
 
    @ManyToMany((type) => Task)

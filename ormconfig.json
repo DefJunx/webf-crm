@@ -4,12 +4,12 @@
       "./build/entity/*.js"
    ],
    "migrations": [
-      "./src/migration/*.ts"
+      "./src/migrations/*.ts"
    ],
    "logging": true,
    "synchronize": false,
    "cli": {
       "entitiesDir": "./src/entity",
-      "migrationsDir": "./src/migration"
+      "migrationsDir": "./src/migrations"
    }
 }
