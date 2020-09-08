@@ -8,6 +8,10 @@ dotenv.config();
 (async function seedDB() {
    try {
       const db = await createConnection();
+
+      // clean tables
+      await db.synchronize(true);
+
       const projectRepo = await db.getRepository(Project);
       const teamRepo = await db.getRepository(Team);
 

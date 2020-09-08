@@ -3,8 +3,11 @@
       <div id="nav">
          <!-- <router-link to="/">Home</router-link> |
          <router-link to="/about">About</router-link> -->
-         <router-link to="/">Home</router-link> |
-         <router-link to="/addDev">Add Developer</router-link>
+         <router-link to="/">Home</router-link> | <router-link to="/addDev">Add Developer</router-link> |
+         <router-link to="/assignRemoveTask">Assign / Remove Task</router-link> |
+         <router-link to="/showInProgress">Show tasks in Progress</router-link> |
+         <router-link to="/showCrossTeam">Show Cross Team</router-link> |
+         <router-link to="/showOverdue">Show Overdue task</router-link> |
       </div>
       <router-view />
    </div>
