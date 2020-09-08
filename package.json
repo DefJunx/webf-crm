@@ -12,8 +12,7 @@
       "start": "node .",
       "dev": "nodemon",
       "build": "tsc",
-      "build:client": "npm run build --prefix client",
-      "prebuild": "npm run build:client && npm run typeorm:run",
+      "prebuild": "npm run typeorm:run",
       "typeorm": "node -r ts-node/register ./node_modules/typeorm/cli.js",
       "typeorm:migrate": "npm run typeorm migration:generate -- -n",
       "typeorm:run": "npm run typeorm migration:run"
