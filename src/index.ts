@@ -11,14 +11,9 @@ dotenv.config();
 
 const app = express();
 
-app.use(
-   helmet({
-      contentSecurityPolicy: false,
-   })
-);
+app.use(helmet());
 app.use(express.json());
 app.use(morgan("common"));
-app.use(express.static(path.join(__dirname, "../client/dist")));
 
 app.get("/ping", (req, res, next) => {
    res.json({ pong: true });
