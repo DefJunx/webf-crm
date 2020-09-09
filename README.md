@@ -21,6 +21,6 @@ Simple CRM Exercise
 - [ ] Rimuovere un task da uno sviluppatore
 - [ ] Mostrare tutti i task "in elaborazione" di uno sviluppatore
 - [ ] Mostrare i progetti cross-team (un progetto è cross team se ha sviluppatori di almeno 2 team diversi che lavorano ai suoi task)
-- [ ] OPT: Creare un nuovo DEV e assegnarlo ad un team
+- [x] OPT: Creare un nuovo DEV e assegnarlo ad un team
 - [ ] Mostrare il PM di riferimento di un DEV
 - [ ] OPT: Mostrare i task che hanno sforato la deadline con i DEV che ci hanno lavorato e i loro relativi commits

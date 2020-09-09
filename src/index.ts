@@ -7,6 +7,9 @@ import morgan from "morgan";
 import cors from "cors";
 import { createConnection } from "typeorm";
 
+import * as Middlewares from "./middlewares";
+import appRouter from "./routes";
+
 dotenv.config();
 
 const app = express();
@@ -16,9 +19,10 @@ app.use(express.json());
 app.use(morgan("common"));
 app.use(cors({ origin: process.env.CORS_URL }));
 
-app.get("/ping", (req, res, next) => {
-   res.json({ pong: true });
-});
+app.use("/", appRouter);
+
+app.use(Middlewares.notFound);
+app.use(Middlewares.errorHandler);
 
 const port = +(process.env.PORT || 1337);
 
