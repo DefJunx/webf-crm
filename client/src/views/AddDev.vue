@@ -12,8 +12,10 @@
                <option v-for="(team, idx) in teams" :key="idx" :value="team.id">{{ team.name }}</option>
             </select>
          </div>
-         <button type="reset">Clear form</button>
-         <button type="submit">Create Dev!</button>
+         <div class="button-group">
+            <button type="reset">Clear form</button>
+            <button type="submit">Create Dev!</button>
+         </div>
       </form>
    </div>
 </template>
@@ -45,10 +47,30 @@ export default class AddDev extends Vue {
 </script>
 
 <style lang="scss" scoped>
+.addDev {
+   text-align: left;
+   padding: 20px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+}
 .formControl {
    margin: 10px 0;
 }
 button {
    margin-right: 5px;
+}
+label {
+   margin-bottom: 5px;
+}
+input,
+label,
+select {
+   display: block;
+}
+.button-group {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
 }
 </style>
